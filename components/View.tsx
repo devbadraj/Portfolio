@@ -1,21 +1,20 @@
 "use client";
 import React, { useEffect } from "react";
-import { PiGithubLogoLight } from "react-icons/pi";
-import { SiCss3, SiFramer } from "react-icons/si";
-import { driver } from "driver.js"; // Ensure this is the correct import
+import { driver } from "driver.js"; 
 import "driver.js/dist/driver.css";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
+console.log("Driver:", driver);   
 export const View = () => {
   useEffect(() => {
     console.log("useEffect called");
 
-    const driverInstance = driver({
+    const driverInstance =  driver({
       animate: true,
       opacity: 0.75,
       padding: 10,
-      allowClose: false,
+      
     });
 
     console.log("driverInstance:", driverInstance);
@@ -30,22 +29,23 @@ export const View = () => {
           position: "bottom",
         },
       });
+     
     };
-
-    const handleClickOutside = (event: MouseEvent) => {
-      console.log("handleClickOutside called");
-      const techStackElement = document.getElementById("tech-stack");
-      if (techStackElement && !techStackElement.contains(event.target as Node)) {
-        console.log("Clicked outside tech-stack, resetting driver");
-        driverInstance.reset();
-      }
-    };
+      
+    // const handleClickOutside = (event: MouseEvent) => {
+    //   console.log("handleClickOutside called");
+    //   const techStackElement = document.getElementById("tech-stack");
+    //   if (techStackElement && !techStackElement.contains(event.target as Node)) {
+    //     console.log("Clicked outside tech-stack, resetting driver");
+    //     driverInstance.reset();
+    //   }
+    // };
 
     const stackLink = document.getElementById("stack-link");
     if (stackLink) {
       console.log("stack-link found");
       stackLink.addEventListener("click", startDriver);
-      document.addEventListener("click", handleClickOutside);
+     // document.addEventListener("click", handleClickOutside);
     } else {
       console.log("stack-link not found");
     }
@@ -53,7 +53,7 @@ export const View = () => {
     return () => {
       if (stackLink) {
         stackLink.removeEventListener("click", startDriver);
-        document.removeEventListener("click", handleClickOutside);
+       // document.removeEventListener("click", handleClickOutside);
       }
     };
   }, []);
@@ -119,8 +119,8 @@ export const View = () => {
             width={1000}
             height={1000}
             className="h-32 w-56 object-cover rounded-lg"
-            src=""
-            alt="Bhopal"
+            src="/game.jpg"
+            alt=""
           />
           <p className="my-3 font-RubikMedium text-sm"></p>
           <button className="bg-[#696969] h-7 p-1 rounded-md text-xs w-full font-RubikMedium ">
