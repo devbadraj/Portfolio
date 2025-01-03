@@ -95,11 +95,15 @@ export const Hero = () => {
                   Dev Badraj
                 </h1>
                 <p className="text-xs font-RubikMedium text-neutral-300 mt-2">
+                    <a href="mailto:dbadraj@gmail.com" className="hover:underline">
                   dbadraj@gmail.com 📧
+                  </a>
                 </p>
 
                 <p className="text-xs font-RubikMedium text-neutral-300 mt-1">
+                    <a href="https://devbadraj.com" className="hover:underline">
                   devbadraj.com 🌍
+                  </a>
                 </p>
 
                 <div className="flex w-full   ">
