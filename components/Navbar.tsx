@@ -25,20 +25,19 @@ export const Navbar = () => {
 
     return (
         <motion.div
-      initial={{ y: 10, opacity: 0 }}
+      initial={{ y: "-100%", opacity: 0 }}
       animate={{
         y: 0,
         opacity: 1,
         transition: {
-          duration: 0.1,
-          bounce: 0.25,
+          duration: 0.5,
           type: "spring",
           stiffness: 100,
         },
       }}
-      className=" "
+      className="fixed bottom-9 left-0 right-0 z-50"
     >
-        <div className="z-50 fixed bottom-9 left-0 right-0 flex justify-center text-white font-bold">
+        <div className="flex justify-center text-white font-bold">
 
             <div className="border border-white/20 mb-8 backdrop-blur-3xl rounded-3xl
                             hidden md:flex items-center justify-center p-2 max-w-[400px] mx-auto">
