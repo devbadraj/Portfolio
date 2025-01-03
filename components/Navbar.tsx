@@ -5,10 +5,10 @@ import React,{ useState } from "react"
 import { AiOutlineMenu, AiOutlineClose} from 'react-icons/ai'
 
 const navLinks = [
-    { title: "About", path: "#about"},
-    { title: "Portfolio", path: "#portfolio"},
+    { title: "Projects", path: "#project", id: "project-link"},
+    { title: "Work", path: "#work", id: "work-link"},
     { title: "Stack", path: "#stack", id: "stack-link"},
-    { title: "Contact", path: "#contact"},
+    { title: "Contact", path: "#contact", id: "contact-link"},
 ]
 
 export const Navbar = () => {
@@ -23,7 +23,7 @@ export const Navbar = () => {
     }
 
     return (
-        <div className="z-50 fixed bottom-7 left-0 right-0 flex justify-center text-white font-bold">
+        <div className="z-50 fixed bottom-9 left-0 right-0 flex justify-center text-white font-bold">
 
             <div className="border border-white/20 mb-8 backdrop-blur-3xl rounded-3xl
                             hidden md:flex items-center justify-center p-2 max-w-[400px] mx-auto">

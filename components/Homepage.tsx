@@ -1,11 +1,53 @@
 "use client";
 import Link from "next/link";
-import React from "react";
+import React,{useEffect} from "react";
 import { PiCodeThin } from "react-icons/pi";
 import { motion, useAnimation } from "framer-motion";
 import Image from "next/image";
+import { driver } from "driver.js"; // Ensure this is the correct import
+import "driver.js/dist/driver.css";
 
-export const Homepage= () => {
+console.log("Driver:", driver); 
+export const Homepage = () => {
+    useEffect(() => {
+      console.log("useEffect called");
+  
+      const driverInstance = driver({
+        animate: true,
+        opacity: 0.75,
+        padding: 10,
+        allowClose: false,
+      });
+  
+      console.log("driverInstance:", driverInstance);
+  
+      const startDriver = () => {
+        console.log("startDriver called");
+        driverInstance.highlight({
+          element: "#work-section",
+          popover: {
+            title: "Work Section",
+            description: "This is the work section.",
+            position: "bottom",
+          },
+        });
+      };
+  
+      const workLink = document.getElementById("work-link");
+      if (workLink) {
+        console.log("work-link found");
+        workLink.addEventListener("click", startDriver);
+      } else {
+        console.log("work-link not found");
+      }
+  
+      return () => {
+        if (workLink) {
+          workLink.removeEventListener("click", startDriver);
+        }
+      };
+    }, []);
+  
   return (
     <motion.div
       initial={{ y: 100, opacity: 0 }}
@@ -28,12 +70,12 @@ export const Homepage= () => {
 
             <div>
               <h1 className="text-2xl font-RubikMedium text-neutral-300">
-                Experience{" "}
+                Work{" "}
                 <span className="text-sm text-neutral-400"></span>
               </h1>
               <p className="max-w-sm text-neutral-400 text-sm">
-                I design and code beautifully simple things, and <br />{" "}
-                occasionally i write about them
+              "Code is like humor. When you have to explain it, <br />{" "}
+              it's bad".
               </p>
             </div>
           </div>
@@ -41,25 +83,26 @@ export const Homepage= () => {
           <div className="border border-neutral-700 my-5" />
 
           <div className="  bg-[#1C1C1C] rounded-lg text-neutral-400">
-            <Link href={"/dashboard/djdj"}>
+            <Link href={"/BrainRekt"}>
               <div className="hover:bg-neutral-800 duration-200 transition-all ease-in p-4">
                 <div className="  flex items-center gap-x-3">
                   <Image
                     width={1000}
                     height={1000}
                     className="w-24 h-24 object-cover rounded-md"
-                    src="/pic.jpg"
+                    src="/BrainRekt.jpg"
                     alt=""
                   />
                   <div>
-                    <span className="text-sm">July 22, 2023</span>
+                    <span className="text-sm font-bold">BrainRekt</span>
                     <h2 className="text-sm font-RubikMedium">
-                      Smooth Animation with React and Framer Motion
+                      Coming Soon...
                     </h2>
                   </div>
                 </div>
               </div>
             </Link>
+            <Link href={"https://nyaay-web.vercel.app/auth/login"} target="_blank">
             <div className="hover:bg-neutral-800 duration-200 transition-all ease-in p-4">
               <div className="  flex items-center gap-x-3">
                 <Image
@@ -77,63 +120,63 @@ export const Homepage= () => {
                 </div>
               </div>
             </div>
+            </Link>
+            <Link href={"https://6419279426b0ac3dc54ff5b4--endearing-kulfi-b38859.netlify.app/"} target="_blank">
             <div className="hover:bg-neutral-800 duration-200 transition-all ease-in p-4">
               <div className="  flex items-center gap-x-3">
                 <Image
                   height={1000}
                   width={1000}
                   className="w-24 h-24 object-cover rounded-md"
-                  src="/scult.jpeg"
+                  src="/Charity_Connect.png"
                   alt=""
                 />
                 <div>
-                  <span className="text-sm">July 22, 2023</span>
+                  <span className="text-sm font-bold">Charity Connect</span>
                   <h2 className="text-sm font-RubikMedium">
-                    Smooth Animation with React and Framer Motion
+                  A centralized platform that connects all NGOs and streamlines the donation process.
                   </h2>
                 </div>
               </div>
             </div>
+            </Link>
           </div>
 
           {/* without image */}
 
-          <div className="mt-6  bg-[#1C1C1C] rounded-lg text-neutral-400">
-            <div className="hover:bg-neutral-800 duration-200 transition-all ease-in p-4">
-              <div className="  flex items-center gap-x-3">
-                <div>
-                  <span className="text-sm">July 22, 2023</span>
-                  <h2 className="text-sm font-RubikMedium">
-                    Smooth Animation with React and Framer Motion
-                  </h2>
-                </div>
-              </div>
-            </div>
-            <div className="hover:bg-neutral-800 duration-200 transition-all ease-in p-4">
-              <div className="  flex items-center gap-x-3">
-                <div>
-                  <span className="text-sm">July 22, 2023</span>
-                  <h2 className="text-sm font-RubikMedium">
-                    Smooth Animation with React and Framer Motion
-                  </h2>
-                </div>
-              </div>
-            </div>
-            <div className="hover:bg-neutral-800 duration-200 transition-all ease-in p-4">
-              <div className="  flex items-center gap-x-3">
-                <div>
-                  <span className="text-sm">July 22, 2023</span>
-                  <h2 className="text-sm font-RubikMedium">
-                    Smooth Animation with React and Framer Motion
-                  </h2>
-                </div>
-              </div>
-            </div>
-          </div>
+          <div className="my-4 p-5">
+                        <h1 className="font-RubikRegular text-xl font-bold">Work History</h1>
+                        <div className="mt-7 flex  justify-between">
+                          <div className="flex gap-x-3">
+                            
+                            <div className="-mt-1">
+                              <h3 className="text-sm font-RubikMedium">Founding Engineer</h3>
+                              <p className="text-[11px] text-gray-500">Fest3</p>
+                            </div>
+                          </div>
+                          <small className="text-[10px] text-neutral-300">
+                            January 2023 - Current
+                          </small>
+                        </div>
+                        <div className="my-3 flex  justify-between">
+                          {/* <div className="flex gap-x-3">
+                            
+                            <div className="-mt-1">
+                              <h3 className="text-sm font-RubikMedium">
+                                Founder
+                              </h3>
+                              <p className="text-[11px] text-gray-500">Meow Meow</p>
+                            </div>
+                          </div>
+                          <small className="text-[10px] text-neutral-300">
+                            April 2004 - December 2024
+                          </small> */}
+                        </div>
+                      </div>
 
           {/* With image */}
 
-          <div className=" mt-6  bg-[#1C1C1C] rounded-lg text-neutral-400">
+          {/* <div className=" mt-6  bg-[#1C1C1C] rounded-lg text-neutral-400">
             <div className="hover:bg-neutral-800 duration-200 transition-all ease-in p-4">
               <div className="  flex items-center gap-x-3">
                 <Image
@@ -185,8 +228,8 @@ export const Homepage= () => {
                 </div>
               </div>
             </div>
-          </div>
-
+          </div> */}
+         
           {/* without image */}
 
           <div className="mt-6  bg-[#1C1C1C] rounded-lg text-neutral-400">

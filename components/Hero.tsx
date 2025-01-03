@@ -1,14 +1,13 @@
 "use client";
 import React, { useState } from "react";
+import { driver } from "driver.js"; 
 import {
-  PiBookOpenTextLight,
-  PiGoogleLogoThin,
-  PiTwitterLogoLight,
   PiMagicWandThin,
   PiShapesThin,
-  PiHouseLight,
 } from "react-icons/pi";
+import { FaXTwitter } from "react-icons/fa6";
 import { SiAdobe } from "react-icons/si";
+import { FaTelegramPlane, FaLinkedin } from "react-icons/fa";
 
 import { motion, useAnimation } from "framer-motion";
 import Link from "next/link";
@@ -57,24 +56,24 @@ export const Hero=() => {
         }}
         className="  bg-[#1C1C1C] w-full md:w-80  h-fit sticky top-5 rounded-2xl"
       >
-        <div className=" md:w-80 w-full p-3 border border-neutral-800   rounded-2xl h-full bg-[#1C1C1C]  ">
+        <div className=" md:w-80 w-full p-3 border border-neutral-800   rounded-2xl h-full bg-[#1C1C1C]">
           <div className="flex">
             <div className="w-full relative">
               <Image
                 width={1000}
                 height={1000}
-                className="w-28 h-28 rounded-full object-cover"
+                className="w-28 h-28 rounded-full object-cover "
                 src="/dev.jpeg"
                 alt="Dev"
               />
               <div
                 onClick={() => setOpen(!open)}
-                className="bg-lime-400 w-3 h-3 cursor-pointer rounded-full absolute top-20 right-28 animate-pulse"
+                className="bg-lime-400 w-3 h-3 cursor-pointer rounded-full absolute top-20 right-28 animate-pulse left-24"
               />
 
               {open && (
-                <div className="border border-lime-400 h-5 flex items-center justify-center rounded-2xl w-fit px-2 absolute top-[4.7rem] right-3 ">
-                  <p className="text-[9px] font-RubikMedium text-lime-300">
+                <div className="border border-lime-400 h-5 flex items-center justify-center rounded-2xl w-20 px-2 absolute top-[4.7rem]  left-32">
+                  <p className="text-[9px] font-RubikMedium text-lime-300 left-">
                     Open for Work
                   </p>
                 </div>
@@ -99,17 +98,15 @@ export const Hero=() => {
                     Blockchain
                   </p>
                   <p className="bg-[#282828] text-neutral-300 rounded-md px-2 h-5 flex items-center justify-center text-[11px] font-RubikBold shrink-0">
-                    meow 
+                    Mobile
                   </p>
-                  <p className=" bg-[#282828] text-neutral-300 rounded-md px-2 h-5 flex items-center justify-center text-[11px] font-RubikBold shrink-0 ">
-                    bhaw 
-                  </p>
+                  
                 </div>
               </div>
             </div>
 
             <div className="flex gap-x-1 w-full h-fit">
-              <Link href={"/"}>
+              {/* <Link href={"/"}>
                 <div className="bg-neutral-700/50 h-7 w-7 rounded-full flex items-center justify-center">
                   <PiHouseLight className="text-neutral-100" />
                 </div>
@@ -117,7 +114,7 @@ export const Hero=() => {
 
               <div className="bg-neutral-700/50 h-7 w-7 rounded-full flex items-center justify-center">
                 <PiBookOpenTextLight className="text-neutral-100" />
-              </div>
+              </div> */}
             </div>
           </div>
 
@@ -141,7 +138,7 @@ export const Hero=() => {
           </form> */}
 
           <div className="w-full mt-5 text-neutral-300">
-            <h2 className="font-RubikBold my-4">Bio</h2>
+            <h2 className="my-4 font-sans font-bold size-3 text-xl">Bio</h2>
             <p className="text-[12px]  font-RubikRegular my-3">
                 Hey there, I’m Dev! ^●^ <br/>  I’m a 20
                 year old full-stack and 
@@ -157,39 +154,42 @@ export const Hero=() => {
               </div>
               <div className="flex items-center gap-x-1">
                 <PiMagicWandThin />
-                <span className="text-xs font-RubikRegular">Few Projects</span>
+                <span className="text-xs font-RubikRegular">Freelancer</span>
               </div>
             </div>
 
             <div className="border border-[#282828] text-neutral-300 my-6" />
 
             <div className="my-4 ">
-              <h1 className="font-RubikRegular">Work History</h1>
-              <div className="mt-7 flex  justify-between">
-                <div className="flex gap-x-3">
-                  <PiGoogleLogoThin className="text-xl" />
+              <h1 className="font-sans font-bold text-xl">Contacts</h1>
+              <div className="mt-3 flex  justify-between">
+                
+                <div className="flex gap-x-2">
+                  <FaXTwitter className="text-xl " />
                   <div className="-mt-1">
-                    <h3 className="text-sm font-RubikMedium">CEO</h3>
-                    <p className="text-[9px]">Fest3</p>
+                  <a href="https://x.com/DevBadraj" className="font-sans p-1" target="_blank "> - @DevBadraj</a>
+                    
                   </div>
                 </div>
-                <small className="text-[9px] text-neutral-300">
-                  January 2023 - Current
-                </small>
+                
               </div>
               <div className="my-3 flex  justify-between">
                 <div className="flex gap-x-3">
-                  <SiAdobe className="text-xl" />
+                  <FaTelegramPlane  className="text-xl" />
                   <div className="-mt-1">
-                    <h3 className="text-sm font-RubikMedium">
-                      Founder
-                    </h3>
-                    <p className="text-[9px]">Meow Meow</p>
+                  <a href="https://t.me/dbadraj" className="font-sans" target="_blank">- @dbadraj</a>
                   </div>
                 </div>
-                <small className="text-[9px] text-neutral-300">
-                  April 2004 - December 2024
-                </small>
+                
+              </div>
+              <div className="my-3 flex  justify-between">
+                <div className="flex gap-x-3">
+                  <FaLinkedin  className="text-xl" />
+                  <div className="-mt-1">
+                  <a href="https://www.linkedin.com/in/devbadraj/" className="font-sans" target="_blank">- @devbadraj</a>
+                  </div>
+                </div>
+                
               </div>
             </div>
           </div>
