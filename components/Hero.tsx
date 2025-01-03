@@ -76,7 +76,7 @@ export const Hero = () => {
                   width={1000}
                   height={1000}
                   className="w-28 h-28 rounded-full object-cover "
-                  src="/dev.jpeg"
+                  src="/baddy.png"
                   alt="Dev"
                 />
                 <div
@@ -95,13 +95,13 @@ export const Hero = () => {
                   Dev Badraj
                 </h1>
                 <p className="text-xs font-RubikMedium text-neutral-300 mt-2">
-                    <a href="mailto:dbadraj@gmail.com" className="hover:underline">
+                    <a href="mailto:dbadraj@gmail.com" className="hover:underline"  target="_blank">
                   dbadraj@gmail.com 📧
                   </a>
                 </p>
 
                 <p className="text-xs font-RubikMedium text-neutral-300 mt-1">
-                    <a href="https://devbadraj.com" className="hover:underline">
+                    <a href="https://devbadraj.com" className="hover:underline" target="_blank">
                   devbadraj.com 🌍
                   </a>
                 </p>
