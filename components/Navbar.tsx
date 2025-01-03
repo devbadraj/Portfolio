@@ -3,10 +3,11 @@
 import Link from "next/link"
 import React,{ useState } from "react"
 import { AiOutlineMenu, AiOutlineClose} from 'react-icons/ai'
+import { motion } from "framer-motion";
 
 const navLinks = [
-    { title: "Projects", path: "#project", id: "project-link"},
-    { title: "Work", path: "#work", id: "work-link"},
+    { title: "About", path: "#about", id: "about-link"},
+    { title: "Projects", path: "#work", id: "work-link"},
     { title: "Stack", path: "#stack", id: "stack-link"},
     { title: "Contact", path: "#contact", id: "contact-link"},
 ]
@@ -23,6 +24,20 @@ export const Navbar = () => {
     }
 
     return (
+        <motion.div
+      initial={{ y: 10, opacity: 0 }}
+      animate={{
+        y: 0,
+        opacity: 1,
+        transition: {
+          duration: 0.1,
+          bounce: 0.25,
+          type: "spring",
+          stiffness: 100,
+        },
+      }}
+      className=" "
+    >
         <div className="z-50 fixed bottom-9 left-0 right-0 flex justify-center text-white font-bold">
 
             <div className="border border-white/20 mb-8 backdrop-blur-3xl rounded-3xl
@@ -47,5 +62,6 @@ export const Navbar = () => {
                 {/* Mobile menu content */}
             </div>
         </div>
+        </motion.div>
     )
 }

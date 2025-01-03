@@ -2,6 +2,9 @@
 import React, { useEffect } from "react";
 import { driver } from "driver.js"; 
 import "driver.js/dist/driver.css";
+import { SiJavascript,SiMongodb,SiSolidity } from "react-icons/si";
+import { FaJava } from "react-icons/fa";
+import { LiaJava } from "react-icons/lia";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -25,7 +28,7 @@ export const View = () => {
         element: "#tech-stack",
         popover: {
           title: "Tech Stack",
-          description: "Here are the technologies I use.",
+          description: "Here are the technologies I use.🧑🏻‍💻",
           position: "bottom",
         },
       });
@@ -65,8 +68,8 @@ export const View = () => {
         y: 0,
         opacity: 1,
         transition: {
-          duration: 0.5,
-          delay: 0.9,
+          duration: 0.3,
+          delay: 0.4,
           type: "spring",
           stiffness: 200,
         },
@@ -86,30 +89,44 @@ export const View = () => {
 
             <div id="tech-stack" className="text-neutral-400" style={{ fontFamily: 'Bebas Neue, Arial, Helvetica, sans-serif' }}>
               <h1 className="font-bold text-neutral-200 text-xl">Tech Stack</h1>
-              <div className="flex items-center gap-x-3 mt-6 hover:bg-neutral-800 p-2 rounded-md">
+              <div className="flex items-center gap-x-3  hover:bg-neutral-800 p-2 rounded-md">
                 <div className="bg-neutral-700/50 h-8 w-8 rounded-full flex items-center justify-center">
-                  {/* //<PiGithubLogoLight className="text-lg" /> */}
+                  <SiJavascript className="text-xl " /> 
                 </div>
-                <h3 className="text-xs">
-                  JavaScript <br /> (React,Next,Express)
+                <div className="-mt-1">
+                <h3 className="text-sm">
+                  JavaScript 
                 </h3>
+                <p className="text-[11px] text-gray-500">(ReactJs, NodeJs, NextJs)</p>
               </div>
-              <div className="flex items-center gap-x-3 mt-6 hover:bg-neutral-800 p-2 rounded-md">
+              </div>
+              <div className="flex items-center gap-x-3  hover:bg-neutral-800 p-2 rounded-md">
+                
                 <div className="bg-neutral-700/50 h-8 w-8 rounded-full flex items-center justify-center">
-                  {/* <SiFramer className="text-lg" /> */}
+                  <SiSolidity className="text-xl " /> 
                 </div>
-                <h3 className="text-xs">
+                
+                <h3 className="text-sm">
                   Solidity
                 </h3>
               </div>
-              <div className="flex items-center gap-x-3 mt-6 hover:bg-neutral-800 p-2 rounded-md">
+              <div className="flex items-center gap-x-3  hover:bg-neutral-800 p-2 rounded-md">
                 <div className="bg-neutral-700/50 h-8 w-8 rounded-full flex items-center justify-center">
-                  {/* <SiCss3 className="text-lg" /> */}
+                <FaJava className="text-2xl " />
                 </div>
-                <h3 className="text-xs">
+                <h3 className="text-sm">
                   Java
                 </h3>
               </div>
+              <div className="flex items-center gap-x-3  hover:bg-neutral-800 p-2 rounded-md">
+                <div className="bg-neutral-700/50 h-8 w-8 rounded-full flex items-center justify-center">
+                <SiMongodb className="text-2xl " /> 
+                </div>
+                <h3 className="text-sm">
+                  SQL
+                </h3>
+              </div>
+              
             </div>
           </div>
         </div>

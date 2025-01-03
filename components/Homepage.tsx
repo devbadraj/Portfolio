@@ -16,7 +16,7 @@ export const Homepage = () => {
         animate: true,
         opacity: 0.75,
         padding: 10,
-        allowClose: false,
+        
       });
   
       console.log("driverInstance:", driverInstance);
@@ -26,11 +26,12 @@ export const Homepage = () => {
         driverInstance.highlight({
           element: "#work-section",
           popover: {
-            title: "Work Section",
-            description: "This is the work section.",
-            position: "bottom",
+            title: "Projects",
+            description: "Cool devs have cooler projects.🔗",
+            position: "left",
           },
         });
+        
       };
   
       const workLink = document.getElementById("work-link");
@@ -55,8 +56,8 @@ export const Homepage = () => {
         y: 0,
         opacity: 1,
         transition: {
-          duration: 0.8,
-          delay: 0.6,
+          duration: 0.7,
+          delay: 0.8,
           type: "spring",
           stiffness: 200,
         },
@@ -82,7 +83,7 @@ export const Homepage = () => {
 
           <div className="border border-neutral-700 my-5" />
 
-          <div className="  bg-[#1C1C1C] rounded-lg text-neutral-400">
+          <div id="work-section" className="  bg-[#1C1C1C] rounded-lg text-neutral-400">
             <Link href={"/BrainRekt"}>
               <div className="hover:bg-neutral-800 duration-200 transition-all ease-in p-4">
                 <div className="  flex items-center gap-x-3">
@@ -232,7 +233,7 @@ export const Homepage = () => {
          
           {/* without image */}
 
-          <div className="mt-6  bg-[#1C1C1C] rounded-lg text-neutral-400">
+          <div  className="mt-6  bg-[#1C1C1C] rounded-lg text-neutral-400">
             <div className="hover:bg-neutral-800 duration-200 transition-all ease-in p-4">
               <div className="  flex items-center gap-x-3">
                 <div>
