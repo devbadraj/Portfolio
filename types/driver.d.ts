@@ -1,25 +1,27 @@
-declare module 'driver.js' {
-  interface DriverOptions {
-    animate?: boolean;
-    opacity?: number;
-    padding?: number;
-    allowClose?: boolean;
-  }
+declare module "driver.js" {
+    interface PopoverOptions {
+        title?: string;
+        description?: string;
+        position?: string;
+        opacity?: number;
+    }
 
-  interface HighlightOptions {
-    element: string | HTMLElement;
-    popover?: {
-      title?: string;
-      description?: string;
-      position?: string;
-    };
-  }
+    interface HighlightOptions {
+        element: string;
+        popover: PopoverOptions;
+    }
 
-  class Driver {
-    constructor(options?: DriverOptions);
-    highlight(options: HighlightOptions): void;
-    reset(): void;
-  }
+    interface DriverInstance {
+        highlight(options: HighlightOptions): void;
+    }
 
-  export default Driver;
+    interface DriverOptions {
+        animate?: boolean;
+        popoverOptions?: {
+            opacity?: number;
+        };
+        padding?: number;
+    }
+
+    export function driver(options: DriverOptions): DriverInstance;
 }

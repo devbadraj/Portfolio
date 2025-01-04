@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { driver } from "driver.js"; 
+import "driver.js/dist/driver.css";
 import {
   PiMagicWandThin,
   PiShapesThin,
@@ -13,47 +14,59 @@ import { motion, useAnimation } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 
+type DriverInstance = ReturnType<typeof driver>;
+
 export const Hero = () => {
   const [open, setOpen] = useState(false);
   const [email, setEmail] = useState("");
-
   const controls = useAnimation();
 
   useEffect(() => {
-    const driverInstance = driver({
+    const driverInstance: DriverInstance = driver({
       animate: true,
-      popoverOptions: {opacity: 0.75} ,
+      popoverOptions: { opacity: 0.75 },
       padding: 10,
     });
 
-    const startDriver = (elementId, title, description) => {
+    // Helper function for driver highlights
+    const startDriver = (elementId: string, title: string, description: string) => {
       driverInstance.highlight({
-        element: elementId,
+        element: `${elementId}`,  // Force string type
         popover: {
-          title: title,
-          description: description,
-          position: "right",
+          title,
+          description,
+          position: "right" as const,  // Type assertion for position
         },
       });
     };
 
+    // Event handler functions
+    const handleContactClick = () => {
+      startDriver("#contacts-section", "Let's Connect", "Always excited to meet new folks.😸");
+    };
+
+    const handleAboutClick = () => {
+      startDriver("#about-section", "Know Me Better", "Your Friendly Neighborhood Developer.😈");
+    };
+
+    // Add event listeners
     const contactLink = document.getElementById("contact-link");
     if (contactLink) {
-      contactLink.addEventListener("click", () => startDriver("#contacts-section", "Let's Connect", "Always excited to meet new folks.😸"));
+      console.log("contact-link found");
+      contactLink.addEventListener("click", handleContactClick);
+    } else {
+      console.log("contact-link not found");
     }
 
     const aboutLink = document.getElementById("about-link");
     if (aboutLink) {
-      aboutLink.addEventListener("click", () => startDriver("#about-section", "Know Me Better", "Your Friendly Neighborhood Developer.😈"));
+      aboutLink.addEventListener("click", handleAboutClick);
     }
 
+    // Cleanup function
     return () => {
-      if (contactLink) {
-        contactLink.removeEventListener("click", () => startDriver("#contacts-section", "Contacts Section", "This is the contacts section."));
-      }
-      if (aboutLink) {
-        aboutLink.removeEventListener("click", () => startDriver("#about-section", "About Section", "This is the about section."));
-      }
+      contactLink?.removeEventListener("click", handleContactClick);
+      aboutLink?.removeEventListener("click", handleAboutClick);
     };
   }, []);
 
@@ -216,3 +229,5 @@ export const Hero = () => {
     </div>
   );
 };
+
+export default Hero;

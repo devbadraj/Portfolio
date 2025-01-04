@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect } from "react";
-import { driver } from "driver.js"; 
-import "driver.js/dist/driver.css";
+import { driver } from "driver.js"; // Ensure this is the correct import
+import "driver.js/dist/driver.css";;
 import { SiJavascript,SiMongodb,SiSolidity } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
 import { LiaJava } from "react-icons/lia";
@@ -13,7 +13,7 @@ export const View = () => {
   useEffect(() => {
     console.log("useEffect called");
 
-    const driverInstance =  driver({
+    const driverInstance = driver({
       animate: true,
       popoverOptions: {opacity: 0.75},
       padding: 10,
