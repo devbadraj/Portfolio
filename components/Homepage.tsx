@@ -146,7 +146,7 @@ export const Homepage = () => {
           {/* without image */}
 
           <div className="my-4 p-5">
-                        <h1 className="font-RubikRegular text-xl font-bold">Work History</h1>
+                        <h1 className="font-RubikRegular text-3xl font-bold ">Experience</h1>
                         <div className="mt-7 flex  justify-between">
                           <div className="flex gap-x-3">
                             

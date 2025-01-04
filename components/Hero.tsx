@@ -22,7 +22,7 @@ export const Hero = () => {
   useEffect(() => {
     const driverInstance = driver({
       animate: true,
-      opacity: 0.75,
+      popoverOptions: {opacity: 0.75} ,
       padding: 10,
     });
 
@@ -95,13 +95,13 @@ export const Hero = () => {
                   Dev Badraj
                 </h1>
                 <p className="text-xs font-RubikMedium text-neutral-300 mt-2">
-                    <a href="mailto:dbadraj@gmail.com" className="hover:underline"  target="_blank">
+                    <a href="mailto:dbadraj@gmail.com" className="hover:underline text-blue-500"  target="_blank">
                   dbadraj@gmail.com 📧
                   </a>
                 </p>
 
                 <p className="text-xs font-RubikMedium text-neutral-300 mt-1">
-                    <a href="https://devbadraj.com" className="hover:underline" target="_blank">
+                    <a href="https://devbadraj.com" className="hover:underline text-blue-500" target="_blank">
                   devbadraj.com 🌍
                   </a>
                 </p>
@@ -185,7 +185,7 @@ export const Hero = () => {
                 <div className="flex gap-x-2">
                   <FaXTwitter className="text-xl " />
                   <div className="-mt-1">
-                  <a href="https://x.com/DevBadraj" className="font-sans p-1" target="_blank "> - @DevBadraj</a>
+                  <a href="https://x.com/DevBadraj" className="font-sans p-1 text-blue-500" target="_blank"> - @DevBadraj</a>
                     
                   </div>
                 </div>
@@ -195,7 +195,7 @@ export const Hero = () => {
                 <div className="flex gap-x-3">
                   <FaTelegramPlane  className="text-xl" />
                   <div className="-mt-1">
-                  <a href="https://t.me/dbadraj" className="font-sans" target="_blank">- @dbadraj</a>
+                  <a href="https://t.me/dbadraj" className="font-sans text-blue-500" target="_blank">- @dbadraj</a>
                   </div>
                 </div>
                 
@@ -204,7 +204,7 @@ export const Hero = () => {
                 <div className="flex gap-x-3">
                   <FaLinkedin  className="text-xl" />
                   <div className="-mt-1">
-                  <a href="https://www.linkedin.com/in/devbadraj/" className="font-sans" target="_blank">- @devbadraj</a>
+                  <a href="https://www.linkedin.com/in/devbadraj/" className="font-sans text-blue-500" target="_blank">- @devbadraj</a>
                   </div>
                 </div>
                 

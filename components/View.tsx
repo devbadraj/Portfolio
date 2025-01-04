@@ -15,7 +15,7 @@ export const View = () => {
 
     const driverInstance =  driver({
       animate: true,
-      opacity: 0.75,
+      popoverOptions: {opacity: 0.75},
       padding: 10,
       
     });
@@ -80,7 +80,7 @@ export const View = () => {
         <div>
           <div className="bg-[#1C1C1C] min-w-min rounded-2xl p-4 border border-neutral-800 h-fit">
             <a href="/Resume.pdf" target="_blank" className="flex justify-center">
-              <button className="bg-[#989797] h-10 p-1 rounded-2xl text-xl w-full font-bold text-black" style={{ fontFamily: 'Bebas Neue, Arial, Helvetica, sans-serif' }}>
+              <button className="bg-[#d5c0c0] h-10 p-1 rounded-2xl text-xl w-full font-bold text-black" style={{ fontFamily: 'Bebas Neue, Arial, Helvetica, sans-serif' }}>
                 Resume
               </button>
             </a>
