@@ -4,7 +4,7 @@ import React,{useEffect} from "react";
 import { PiCodeThin } from "react-icons/pi";
 import { motion, useAnimation } from "framer-motion";
 import Image from "next/image";
-import { driver } from "driver.js"; // Ensure this is the correct import
+import  {driver}  from "driver.js"; // Ensure this is the correct import
 import "driver.js/dist/driver.css";
 
 console.log("Driver:", driver); 
@@ -14,7 +14,7 @@ export const Homepage = () => {
   
       const driverInstance = driver({
         animate: true,
-        opacity: 0.75,
+        popoverOptions: {opacity: 0.75},
         padding: 10,
         
       });
