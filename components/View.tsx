@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
-import { driver } from "driver.js"; // Ensure this is the correct import
+import  {driver}  from "driver.js"; // Ensure this is the correct import
 import "driver.js/dist/driver.css";;
 import { SiJavascript,SiMongodb,SiSolidity } from "react-icons/si";
 import { FaJava } from "react-icons/fa";

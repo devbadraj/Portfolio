@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { driver } from "driver.js"; 
+import  {driver}  from "driver.js"; 
 import "driver.js/dist/driver.css";
 import {
   PiMagicWandThin,
