@@ -1,1 +1,1 @@
-[devbadraj.com](devbadraj.com)
+[devbadraj.com](https://www.devbadraj.com)
